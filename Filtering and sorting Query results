@@ -1,0 +1,51 @@
+Exercise:
+There are a few concepts in this lesson, but all are pretty straight-forward to apply.
+To spice things up, we've gone and scrambled the Movies table for you in the exercise to better mimic what kind of data you might see in real life.
+Try and use the necessary keywords and clauses introduced above in your queries.
+
+Id	Title	      Director	         Year	    Length_minutes
+1	WALL-E	      Andrew Stanton	2008	104
+2	Monsters, Inc.	Pete Docter	2001	92
+3	Cars 2	        John Lasseter	2011	120
+4	A Bug's Life	  John Lasseter	1998	95
+5	Up	          Pete Docter	2009	101
+6	Ratatouille	  Brad Bird	2007	115
+7	The Incredibles	   Brad Bird	2004	116
+8	Toy Story 2	 John Lasseter	1999	93
+9	MonstersUniversityDan Scanlon	2013	110
+10	Finding Nemo	 Andrew Stanton	2003	107
+11	Toy Story	 John Lasseter	1995	81
+12	Brave	      Brenda Chapman	2012	102
+13	Cars	      John Lasseter	2006	117
+14	Toy Story 3	  Lee Unkrich	2010	103
+
+
+1. List all directors of Pixar movies (alphabetically), without duplicates.
+    
+    SELECT Distinct(Director)
+    FROM movies
+    ORDER BY Director  ASC;
+    
+    
+ 2. List the last four Pixar movies released (ordered from most recent to least).
+ 
+          SELECT Title,YEAR
+          FROM movies
+          ORDER BY YEAR DESC
+          LIMIT 4;
+          
+ 3. List the first five Pixar movies sorted alphabetically.
+   
+       SELECT DISTINCT (Title)
+        FROM movies
+       ORDER BY TITLE ASC
+       LIMIT 5;
+      
+  4. List the next five Pixar movies sorted alphabetically.
+  
+      SELECT Title
+     FROM movies
+     ORDER BY Title ASC
+      LIMIT 5 OFFSET 5;
+      --- The LIMIT will reduce the number of rows to return, and the optional OFFSET will specify where to begin counting the number rows from.
+   
